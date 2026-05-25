@@ -1,0 +1,717 @@
+*{
+margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html{
+    font-family: century gothic, sans-serif;
+    color:azure;
+}
+
+header, .nav {
+  /*background-color:#1fc4c4 ;*/
+  /*background-color: #02131D;*/
+  padding: 40px 40px;
+  /*position: fixed;*/
+  position:absolute;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  right:0;
+  
+}
+
+/*header{
+     opacity: 0.7;
+}
+*/ 
+
+/*.nav-logo {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+}
+*/
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: clamp(15px, 4vw, 70px);
+}
+
+.hamburger {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: white;
+    z-index: 2000;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    display:none;
+}
+
+.nav ul li a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out; 
+  display: inline-block; 
+  padding-bottom: 5px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.nav a.home_link{
+    color: #f78113;
+    font-size: 20px;
+}
+
+.nav ul li a:hover{
+    transform: translateY(-2px) scale(1.05); 
+  cursor: pointer;
+  color: whitesmoke; 
+  
+}
+
+.nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #f78113;
+    transition: width 0.3s ease-out;
+}
+
+.nav ul li a:hover::after {
+  width:100%;
+}
+
+body{
+   font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.landing_page
+{
+    background-color: black;
+    background-image: url("landing_pic.png");
+    /*background-attachment: fixed;*/
+    background-size: cover;
+    /*min-height: 100vh;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  padding-top: 60px; 
+  text-align: left;
+  height: 100vh;
+}
+.subhead{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 5vw, 55px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    margin-top: 80px;
+    margin-left: 100px;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8); 
+    line-height: 0.9;
+}
+
+.header{
+    text-align: left;
+    font-family: 'Bebas Neue', sans-serif;
+   font-size: clamp(52px, 10vw, 110px);
+    margin-left: 100px;
+    font-weight: bold;
+    color: azure;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    line-height: 0.95;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.8);
+}
+
+.about-section {
+    padding: 80px 50px;
+    background-color: #0a1418; 
+    /*background-image: url("gym_int.jpg");*/
+    min-height:100vh;
+    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+}
+
+.about-card{
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, #02131D 100%);
+    
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    border-color: #e28743;
+    cursor: pointer;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 7vw, 75px);
+    color: #ec8333;
+}
+
+.about-header p{
+    font-family: 'Montserrat', sans-serif;
+    color: #cccccc;
+    font-size: 18px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-card {
+    background-color: #02131D;
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #1a2f3a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card h3 {
+    font-family: 'Oswald';
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: azure;
+}
+
+.about-card p {
+    font-family: 'Montserrat'; 
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.about-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.classes-section {
+    padding: 80px 50px;
+    background: linear-gradient(
+            rgba(2, 19, 29, 0.88),
+            rgba(0, 0, 0, 0.9)
+    ),
+    url("https://www.transparenttextures.com/patterns/carbon-fibre.png"),
+    url("class_sec.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    /*background-image: url("gym_int.jpg");*/
+    min-height:100vh;
+} 
+
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+
+.classes-header {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 7vw, 75px);
+    color: #ec8333;
+    letter-spacing: 3px;
+}
+
+.class-row {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/*.class-row:nth-child(even) {
+    flex-direction: row-reverse;
+}*/
+
+
+
+.class-image {
+    flex: 1;
+}
+
+.class-image img {
+    width: 100%;
+   height: clamp(220px, 45vw, 500px);
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.class-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.class-content h3 {
+    font-family: 'Bebas Neue';
+    font-size: 50px;
+    color: #f78113e5;
+    margin-bottom: 12px;
+}
+
+.class-content p {
+    color: #cccccc;
+    font-family: 'Montserrat';
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.class-tags {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.class-tags span {
+    background: #f58012e5;
+    color: black;
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    font-family:'Montserrat', sans-serif;
+}
+
+.class-content button {
+    background: transparent;
+    border: 2px solid #f78113;
+    color: #f78113;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family:'Montserrat', sans-serif;
+}
+
+.class-content button:hover {
+    background: #f78113;
+    color: black;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+
+    background: rgba(0,0,0,0.7);
+    color: #f78113;
+
+    cursor: pointer;
+    z-index: 10;
+
+    font-size: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+#toTopBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #02131ddc;
+  border: 2px solid #f78113cd;
+  color: #f78113b5;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  font-family:'Montserrat', sans-serif;
+  text-align: center;
+  line-height: 55px;
+  padding: 15px;
+  border-color: #f78113e1;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transition: all 0.1s ease;
+}
+
+#toTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#toTopBtn:hover {
+  background-color: #333;
+}
+
+.banger-bar {
+    background-color: #f78113;
+  color: #000000;
+  padding: 15px 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banger-content {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.our-team {
+    padding: 80px 50px;
+    background-color: #0a1418; 
+    /*background-image: url("gym_int.jpg");*/
+    min-height:100vh;
+    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+}
+
+.team-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ec8333;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 7vw, 75px);
+}
+
+.team-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background-color: #02131D;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #1a2f3a;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card h3{
+    font-family: 'Oswald';
+    margin-top: 15px;
+    font-size: 22px;
+    color: azure;
+}
+
+.team-card p {
+    font-family: 'Montserrat'; 
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.team-card img {
+  width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: 50% 20%;
+    border-radius: 20px;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    border-color: #e28743;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1024px) {
+
+    .about-grid,
+    .team-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .class-row {
+        flex-direction: column;
+    }
+
+    .class-content {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .class-tags {
+        justify-content: center;
+    }
+
+    .header,
+    .subhead {
+        margin-left: 50px;
+    }
+
+    .about-section,
+.classes-section,
+.our-team {
+    padding: clamp(50px, 6vw, 80px) clamp(20px, 4vw, 50px);
+}
+
+.class-content p,
+.about-card p,
+.team-card p {
+    max-width: 65ch;
+}
+
+}
+
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .nav{
+        background-color:#010b11;
+         padding: 0 20px;
+         position: fixed;
+         top: 0;
+         left: 0;
+         right: 0;
+         z-index: 1000;
+    }
+    .nav ul {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+        scrollbar-width: none;
+    }
+
+    .nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav ul li {
+        flex-shrink: 0;
+    }
+
+    .hamburger {
+    display: flex;
+  justify-content: flex-end;
+}
+
+.logo img {
+    display: block;
+}
+
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 80vh;
+    background: rgba(2, 19, 29, 0.97);
+    backdrop-filter: blur(10px);
+    line-height: 1.5;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 35px;
+
+    transition: right 0.4s ease;
+
+    z-index: 1500;
+}
+
+.nav-links.active {
+    right: 0;
+}
+
+.nav ul li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 18px;
+}
+
+.nav-links li:last-child {
+    border-bottom: none;
+}
+
+.nav ul li a {
+    font-size: 22px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+}
+
+    /* HERO */
+    .landing_page {
+        text-align: center;
+        align-items: center;
+        padding: 20px;
+         background-size: cover;
+    background-position: 75% center;
+    }
+
+    .header,
+    .subhead {
+        margin-left: 0;
+    }
+
+    /* SECTIONS */
+    .about-section,
+    .classes-section,
+    .our-team {
+        padding: 60px 20px;
+    }
+
+    /* GRIDS */
+    .about-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* CAROUSEL */
+    .class-row {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .class-content {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .class-content h3 {
+        font-size: 38px;
+    }
+
+    .class-tags {
+        justify-content: center;
+    }
+
+    .class-content button {
+        width: 100%;
+    }
+
+    /* BUTTONS */
+    /*.carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }*/
+
+    /* TOP BUTTON */
+    #toTopBtn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    /* BANNER */
+    .banger-content {
+        font-size: 12px;
+        text-align: center;
+        white-space: normal;
+    }
+
+     .about-card,
+    .team-card {
+        padding: 25px;
+    }
+
+    .about-card img,
+    .team-card img {
+        border-radius: 15px;
+        height: clamp(220px, 45vw, 500px);
+    }
+
+     .carousel-container {
+    padding-bottom: 90px;
+}
+
+.carousel-btn {
+    top: auto;
+    bottom: 20px;
+    transform: none;
+
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Center buttons properly */
+.prev {
+    left: 50%;
+    transform: translateX(-60px);
+}
+
+.next {
+    right: 50%;
+    transform: translateX(60px);
+}
+}
